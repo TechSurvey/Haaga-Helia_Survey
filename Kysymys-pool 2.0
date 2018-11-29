@@ -8,7 +8,7 @@ ja ympäristöjen kehityksessä otettu tarpeeksi huomioon muokkautuvuus eri lait
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Laitteiden käyttö: (kategoria: kategoria1)
 
-Mitä laitetta/laitteita käytät pääasiassa koulutehtävien tekemiseen?
+Mitä laitetta/laitteita käytät pääasiassa koulutehtävien tekemiseen? [checkbox]
 Kannettava tietokone
 Kannettava tietokone VDI:n yli
 Koulun kone
@@ -17,14 +17,14 @@ Pöytäkone
 Tabletti
 Puhelin
 
-Millä käyttöjärjestelmillä pääasiassa käytät koulun ohjelmia/työvälineitä?
+Millä käyttöjärjestelmillä pääasiassa käytät koulun ohjelmia/työvälineitä? [checkbox]
 Windows
 Linux
 IOS
 Android
 joku muu
 
-Millä selaimella  pääasiassa käytät koulun ohjelmia/työvälineitä?
+Millä selaimella  pääasiassa käytät koulun ohjelmia/työvälineitä? [checkbox]
 Google Chrome
 Mozilla Firefox
 Opera
@@ -32,7 +32,7 @@ Safari
 Internet Explorer
 joku muu
 
-Koetko pystyväsi käyttämään koulun vaatimia ohjelmistoja hyvin laitteesi kautta?
+Koetko pystyväsi käyttämään koulun vaatimia ohjelmistoja hyvin laitteesi kautta? [radiobutton]
 Kyllä
 En
 En osaa sanoa
@@ -40,12 +40,12 @@ En osaa sanoa
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Koulun tajoamat työvälineet:  (kategoria: kategoria2)
 
-Oletko yleisesti tyytyväinen koulun tarjoamiin ohjelmiin/työvälineisiin?
+Oletko yleisesti tyytyväinen koulun tarjoamiin ohjelmiin/työvälineisiin? [radionbutton]
 Kyllä
 En
 En osaa sanoa
 
-Mitä alla olevista koulun työvälineistä tai ohjelmista käytät tai olet käyttänyt?
+Mitä alla olevista koulun työvälineistä tai ohjelmista käytät tai olet käyttänyt? [checkbox]
 Office o365 - Sähköposti
 Office o365 - One Drive
 Moodle
@@ -56,12 +56,12 @@ Lukkarikone
 Vanha MyNet
 Skype for Business
 
-Oletko törmännyt ongelmiin käyttäessäsi koulun työvälineitä tai ohjelmia?
+Oletko törmännyt ongelmiin käyttäessäsi koulun työvälineitä tai ohjelmia? [radiobutton]
 Kyllä
 En
 En osaa sanoa
 
-Jos olet, mitä ohjelmaa tai työvälinettä ongelma koskee?
+Jos olet, mitä ohjelmaa tai työvälinettä ongelma koskee? [checkbox]
 Office o365
 Moodle
 Peppi
@@ -73,34 +73,34 @@ Skype for Businesd
 jokin muu
 
 Jos olet törmännyt ongelmiin työvälineiden ja ohjelmien kanssa, koitko että ongelman takia kurssin suorittaminen hankaloitui
-tai ongelma vaikutti kurssin tai työn suorittamiseen kriittisesti?
+tai ongelma vaikutti kurssin tai työn suorittamiseen kriittisesti? [radiobutton]
 Kyllä
 En
 En osaa sanoa
 
-Oletko joutunut käyttämään jotain korvaavaa ohjelmaa koulun suositellun ohjelman sijasta?
+Oletko joutunut käyttämään jotain korvaavaa ohjelmaa koulun suositellun ohjelman sijasta? [radiobutton]
 Kyllä
 Ei
 En osaa sanoa
 
-Jos olet, mitä korvaavaa ohjelmaa olet käyttänyt?
+Jos olet, mitä korvaavaa ohjelmaa olet käyttänyt? [TEXT]
 [ teksti ]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Ryhmätyöskentely:  (kategoria: kategoria3)
 
-Oletko tyytyväinen koulun tarjoamiin ryhmätyöskentelyn työvälineisiin ja ohjelmiin?
+Oletko tyytyväinen koulun tarjoamiin ryhmätyöskentelyn työvälineisiin ja ohjelmiin? [radiobutton]
 Kyllä
 En
 En osaa sanoa
 
 
-Haluaisitko koulun tarjoavan laajemmin ryhmätyökaluja kursseilla?
+Haluaisitko koulun tarjoavan laajemmin ryhmätyökaluja kursseilla? [radiobutton]
 Kyllä
 En
 En osaa sanoa
 
-Mitä ohjelmia ja työvälineitä olet käyttänyt ryhmätyöskentelyssä tähän mennessä?
+Mitä ohjelmia ja työvälineitä olet käyttänyt ryhmätyöskentelyssä tähän mennessä? [checkbox]
 Whatsapp
 Slack
 Trello
@@ -109,22 +109,22 @@ GitHub
 Discord
 jokin muu
 
-Jos valitsit edellisessä kysymyksessä kohdan "jokin muu", mihin ohjelmaan tai työkaluun viittaisit?
+Jos valitsit edellisessä kysymyksessä kohdan "jokin muu", mihin ohjelmaan tai työkaluun viittaisit? [TEXT]
 [ teksti ]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Responsiivisuus:
+Responsiivisuus: (kategoria: kategoria4)
 
-Koetko että puhelimella työvälineiden ja ohjelmien käyttö on helppoa?
+Koetko että puhelimella työvälineiden ja ohjelmien käyttö on helppoa? [radiobutton]
 Kyllä En
 En osaa sanoa
 
-Koetko että puhelimen kautta osa ohjelmien ja työvälineiden toiminnallisuuksista katoaa tai toimii puutteellisesti?
+Koetko että puhelimen kautta osa ohjelmien ja työvälineiden toiminnallisuuksista katoaa tai toimii puutteellisesti? [radiobutton]
 Kyllä
 En
 En osaa sanoa
 
-Jos vastasit kyllä, mitä ohjelmaa käytettäessä tämä tulee esille?
+Jos vastasit kyllä, mitä ohjelmaa käytettäessä tämä tulee esille? [checkbox]
 Office o365
 Moodle
 Peppi
@@ -135,14 +135,14 @@ Vanha MyNet
 Skype for Businesd
 jokin muu
 
-Jos vastasit yllä olevaan kysymykseen, mitä ominaisuutta nämä ongelmat yleensä koskevat?
+Jos vastasit yllä olevaan kysymykseen, mitä ominaisuutta nämä ongelmat yleensä koskevat? [checkbox]
 Responsiivisuutta
 Tiedon katoamista
 Linkkien supistamista/kadottamista
 Asemointia
 jotain muuta
 
-Kerro lyhyesti oma mielipiteesi mitä parannettavaa koulun työvälineiden ja ohjelmien tarjonnassa olisi?
+Kerro lyhyesti oma mielipiteesi mitä parannettavaa koulun työvälineiden ja ohjelmien tarjonnassa olisi? [TEXT]
 [ teksti ]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
