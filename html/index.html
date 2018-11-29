@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laitekysely</title>
 
-    <link href="../css/style.css" type="text/css" rel="stylesheet">
+    <link href="../css/style.css" type="text/css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -77,11 +77,12 @@
         </header>
         <h1 class="text-center">Laitekysely</h1>
 
-    <form class="registration-form" id="k1" style="display: none;">
+    <form class="registration-form" id="k1">
             
             <label class="col-two-half">
                 
-                <div id="lomake1">Mitä laitetta käytät pääasiassa koulutehtävien tekemiseen?<input type="text" id="undefined"></div>
+                <div id="lomake1">
+                </div>
 
             </label>
             
@@ -90,11 +91,12 @@
             </div>
     </form>
 
-    <form class="registration-form" id="k2" hidden="" style="display: block;">
+    <form class="registration-form" id="k2" hidden>
             
             <label class="col-two-half">
                 
-                <div id="lomake2">Minkä merkkinen laite on?<input type="text" id="undefined"></div>
+                <div id="lomake2">
+                </div>
 
             </label>
             
@@ -103,11 +105,12 @@
                 <button class="seuraava" id="seuraava2">Seuraava</button>
             </div>
     </form>
-    <form class="registration-form" id="k3" hidden="" style="display: none;">
+    <form class="registration-form" id="k3" hidden>
             
             <label class="col-two-half">
                 
-                <div id="lomake3">Pystytkö käyttämään koulun vaatimia ohjelmistoja koneella?<input type="text" id="undefined"></div>
+                <div id="lomake3">
+                </div>
 
             </label>
             
@@ -116,11 +119,12 @@
                 <button class="seuraava" id="seuraava3">Seuraava</button>
             </div>
     </form>
-    <form class="registration-form" id="k4" hidden="" style="display: none;">
+    <form class="registration-form" id="k4" hidden>
             
             <label class="col-two-half">
                 
-                <div id="lomake4">Pystytkö käyttämään Peppiä laitteella ongelmitta?<input type="text" id="undefined"></div>
+                <div id="lomake4">
+                </div>
 
             </label>
             
@@ -130,17 +134,18 @@
             </div>
     </form>
 
-    <form class="registration-form" id="k5" hidden="" style="display: none;">
+    <form class="registration-form" id="k5" hidden>
         
         <label class="col-two-half">
             
-            <div id="lomake5">Onko ohjeistus riittävä, jos käyttää muita kuin suositeltuja laitteita?<input type="text" id="undefined"></div>
+            <div id="lomake5">
+            </div>
 
         </label>
         
         <div class="text-center">
             <button class="edellinen" id="edellinen4">Edellinen</button>
-            <button class="submit">Lähetä</button>
+            <button class="submit" onclick="laheta()">Lähetä</button>
         </div>
 </form>
 
@@ -174,10 +179,36 @@
         document.getElementById("lomake3").innerHTML = kysymys3 + "<input type=text id="+lomakeid[3]+" >";
         document.getElementById("lomake4").innerHTML = kysymys4 + "<input type=text id="+lomakeid[4]+" >";
         document.getElementById("lomake5").innerHTML = kysymys5 + "<input type=text id="+lomakeid[5]+" >";
-               
-    })
+
+    });
+
+    //Lomakkeen tietojen lukeminen ja muuttaminen JSON-muotoon
+        
+    function laheta(){
+            var vastaus;
+            var questionType;
+            
+            for(i=0; i < lomakekysymys.length; i++){
+                
+                questionType = document.getElementById(lomakekysymys[i]).type;
+                vastaus = document.getElementById(lomakekysymys[i]).value;
+                var lahetys = "{ '" + lomakekysymys[i] + "': '" + vastaus + "'}";
+                alert(lahetys);
+            }
+            
+            var myJSON = JSON.stringify(lahetys);
+            
+            $.ajax({
+                url: 'https://technosurvey.herokuapp.com/answers',
+                type: 'POST',
+                dataType: 'json',
+                data: myJSON, 
+                success: function() { alert('POST completed. Data:' + myJSON)}
+            });
+        }
+
+    
         </script>
    
-
 </body>
 </html>
