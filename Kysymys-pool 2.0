@@ -6,7 +6,7 @@ millä laitteilla opiskelijat yleisimmin käyttävät oppimisalustoja ja -työv�
 ja ympäristöjen kehityksessä otettu tarpeeksi huomioon muokkautuvuus eri laitteiden välillä.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Laitteiden käyttö:
+Laitteiden käyttö: (kategoria: kategoria1)
 
 Mitä laitetta/laitteita käytät pääasiassa koulutehtävien tekemiseen?
 Kannettava tietokone
@@ -17,17 +17,20 @@ Pöytäkone
 Tabletti
 Puhelin
 
-Minkä merkkinen käyttämäsi laite/laitteet ovat?
-[ teksti ]
+Millä käyttöjärjestelmillä pääasiassa käytät koulun ohjelmia/työvälineitä?
+Windows
+Linux
+IOS
+Android
+joku muu
 
-Kuinka usein käytät koulun käytävällä olevia koneita?
-Päivittäin
-3-4 kertaa viikossa
-Pari kertas viikossa
-Noin kerran viikossa
-Harvemmin
-En juurikaan
-En käytä koulun käytävillä olevia koneita
+Millä selaimella  pääasiassa käytät koulun ohjelmia/työvälineitä?
+Google Chrome
+Mozilla Firefox
+Opera
+Safari
+Internet Explorer
+joku muu
 
 Koetko pystyväsi käyttämään koulun vaatimia ohjelmistoja hyvin laitteesi kautta?
 Kyllä
@@ -35,9 +38,9 @@ En
 En osaa sanoa
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Koulun tajoamat työvälineet:
+Koulun tajoamat työvälineet:  (kategoria: kategoria2)
 
-Oletko tyytyväinen koulun tarjoamiin ohjelmiin/työvälineisiin?
+Oletko yleisesti tyytyväinen koulun tarjoamiin ohjelmiin/työvälineisiin?
 Kyllä
 En
 En osaa sanoa
@@ -69,14 +72,11 @@ Vanha MyNet
 Skype for Businesd
 jokin muu
 
-Jos valitsit edellisessä kysymyksessä kohdan "jokin muu", mihin ohjelmaan tai työkaluun viittaisit?
-[ teksti ]
-
-Jos olet törmännyt ongelmiin työvälineiden ja ohjelmien kanssa, koitko että ongelman takia kurssin suorittaminen hankaloitui tai ongelma vaikutti kurssin tai työn suorittamiseen kriittisesti?
+Jos olet törmännyt ongelmiin työvälineiden ja ohjelmien kanssa, koitko että ongelman takia kurssin suorittaminen hankaloitui
+tai ongelma vaikutti kurssin tai työn suorittamiseen kriittisesti?
 Kyllä
 En
 En osaa sanoa
-
 
 Oletko joutunut käyttämään jotain korvaavaa ohjelmaa koulun suositellun ohjelman sijasta?
 Kyllä
@@ -87,7 +87,7 @@ Jos olet, mitä korvaavaa ohjelmaa olet käyttänyt?
 [ teksti ]
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Ryhmätyöskentely:
+Ryhmätyöskentely:  (kategoria: kategoria3)
 
 Oletko tyytyväinen koulun tarjoamiin ryhmätyöskentelyn työvälineisiin ja ohjelmiin?
 Kyllä
@@ -106,6 +106,7 @@ Slack
 Trello
 o365 - OneDrive
 GitHub
+Discord
 jokin muu
 
 Jos valitsit edellisessä kysymyksessä kohdan "jokin muu", mihin ohjelmaan tai työkaluun viittaisit?
@@ -118,32 +119,31 @@ Koetko että puhelimella työvälineiden ja ohjelmien käyttö on helppoa?
 Kyllä En
 En osaa sanoa
 
-Koetko että mobiililiittymän kautta osa ohjelmien ja työvälineiden toiminnallisuuksista katoaisi tai toimisi puutteellisesti?
+Koetko että puhelimen kautta osa ohjelmien ja työvälineiden toiminnallisuuksista katoaa tai toimii puutteellisesti?
 Kyllä
 En
 En osaa sanoa
 
 Jos vastasit kyllä, mitä ohjelmaa käytettäessä tämä tulee esille?
-[ teksti ]
+Office o365
+Moodle
+Peppi
+VDI
+Asio
+Lukkarikone
+Vanha MyNet
+Skype for Businesd
+jokin muu
 
-Jos olet havainnut eri työvälineissä puutteita toiminnallisuuksissa mobiililiittymän kautta, mitä nämä yleensä koskevat?
+Jos vastasit yllä olevaan kysymykseen, mitä ominaisuutta nämä ongelmat yleensä koskevat?
 Responsiivisuutta
 Tiedon katoamista
 Linkkien supistamista/kadottamista
 Asemointia
 jotain muuta
 
-Jos vastasit "jotain muuta", mitä mielestäsi toiminnallisuuksien puutteet yleensä koskevat mobiililiittymässä?
+Kerro lyhyesti oma mielipiteesi mitä parannettavaa koulun työvälineiden ja ohjelmien tarjonnassa olisi?
 [ teksti ]
-
-Koetko että koulun työvälineiden parantaminen vaikuttaisi opiskelun sujuvuuteen?
-Kyllä
-En
-En osaa sanoa
-
-Jos vastasit kyllä, mitä parannettavaa koulun työvälineiden ja ohjelmien tarjonnassa mielestäsi olisi tässä suhteessa?
-[ teksti ]
-
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Kiitos vastauksestasi, arvostamme palautettasi!
