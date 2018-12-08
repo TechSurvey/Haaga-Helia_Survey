@@ -12,144 +12,162 @@
 <body>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
         </script>
-        
+
         <script> //kysymysten vaihto ja piilotus
+
                 $(document).ready(function(){
                     
                     $("#seuraava1").click(function(){
                         $("#k1").hide();
                         $("#k2").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
 
                         $("#edellinen1").click(function(){
                         $("#k2").hide();
                         $("#k1").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
 
                     $("#edellinen2").click(function(){
                         $("#k3").hide();
                         $("#k2").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
 
                     $("#seuraava2").click(function(){
                         $("#k2").hide();
                         $("#k3").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
             
                     $("#edellinen3").click(function(){
                         $("#k4").hide();
                         $("#k3").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
                         
                     $("#seuraava3").click(function(){
                         $("#k3").hide();
                         $("#k4").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
             
                     $("#edellinen4").click(function(){
                         $("#k5").hide();
                         $("#k4").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
                         
                     $("#seuraava4").click(function(){
                         $("#k4").hide();
                         $("#k5").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
+                        return false;
+                        });
+
+                        $("#kiitos").click(function(){
+                        $("#k5").hide();
+                        $("#k6").show();
+                        document.body.scrollTop = 0;
+                        document.documentElement.scrollTop = 0;
                         return false;
                         });
                     })
-                      
             </script>
     
         <div class="container">
-        <header>
-            <h1>
-                <a href="#">
-                    <img src="../kuvat/hh_logo.png" alt="Haaga-Helia logo">
-                </a>
-            </h1>
-        </header>
-        <h1 class="text-center">Laitekysely</h1>
 
-    <form class="registration-form" id="k1">
-            
+        <header>
+            <img src="../kuvat/hh_logo.png" alt="Haaga-Helia logo" width="40%">
+        </header>
+
+    <form class="registration-form" id="k1">            
             <label class="col-two-half">
-                
                 <div id="lomake1">
                 </div>
-
             </label>
-            
             <div class="text-center">
                 <button class="seuraava" id="seuraava1">Seuraava</button>
+                <br>
             </div>
     </form>
 
     <form class="registration-form" id="k2" hidden>
-            
             <label class="col-two-half">
-                
                 <div id="lomake2">
                 </div>
-
             </label>
-            
             <div class="text-center">
-                <button class="edellinen" id="edellinen1">Edellinen</button>
                 <button class="seuraava" id="seuraava2">Seuraava</button>
+                <button class="edellinen" id="edellinen1">Edellinen</button>
+                <br>
             </div>
     </form>
     <form class="registration-form" id="k3" hidden>
-            
             <label class="col-two-half">
-                
                 <div id="lomake3">
                 </div>
-
             </label>
-            
             <div class="text-center">
-                <button class="edellinen" id="edellinen2">Edellinen</button>
                 <button class="seuraava" id="seuraava3">Seuraava</button>
+                <button class="edellinen" id="edellinen2">Edellinen</button>
+                <br>
             </div>
     </form>
     <form class="registration-form" id="k4" hidden>
             
             <label class="col-two-half">
-                
                 <div id="lomake4">
                 </div>
-
             </label>
             
             <div class="text-center">
-                <button class="edellinen" id="edellinen3">Edellinen</button>
                 <button class="seuraava" id="seuraava4">Seuraava</button>
+                <button class="edellinen" id="edellinen3">Edellinen</button>
+                <br>
             </div>
     </form>
 
     <form class="registration-form" id="k5" hidden>
         
         <label class="col-two-half">
-            
             <div id="lomake5">
             </div>
-
         </label>
         
         <div class="text-center">
+            <button class="submit" onclick="laheta()" id="kiitos">Lähetä</button>
             <button class="edellinen" id="edellinen4">Edellinen</button>
-            <button class="submit" onclick="laheta()">Lähetä</button>
+            <br>
         </div>
 </form>
 
-    
+<form class="registration-form" id="k6" hidden>
+        
+        <label class="col-two-half">
+            <div id="lomake6">
+                Kiitos vastauksestasi!
+            </div>
+        </label>
+        
+</form>
+
 </div>
     
     <script>
@@ -158,56 +176,98 @@
     var lomakeid = []; //tähän kerätään id-tunnukset
     var lomakekysymys= [];
     
-    $.getJSON("https://technosurvey.herokuapp.com/questions", function( data ){
+    $.getJSON("https://technosurvey.herokuapp.com/categories", function( data ){
         
         $.each(data, function(key, d){
-           
+           var kysymykset = [];
+            
             //kerätään id-tunnukset taulukkoon
-            lomakeid.push(d.id);
-            lomakekysymys.push(d.questionName);
+            //lomakeid.push(d.categoryId);
+            lomakekysymys = d.categoryName;
+            var categoria = d.questions
+            
+            $.each(categoria, function(key2, d2){
+                
+                lomakeid.push(d2.questionId);
+                    
+                    if (d2.questionType=="checkbox") {
+                        kysymykset.push("<br><br>" + d2.questionName + "<br>");
+                        for (i = 0; i < d2.values.length; i++) {
+                            kysymykset.push("<input type=" + d2.questionType + " id= " + d2.questionId + "name= " +d2.questionId + " value=" + d2.values[i] + ">" + d2.values[i]  + "<br>");
+                        }
+                    }
+                    if (d2.questionType=="radio") {
+                        kysymykset.push("<br><br>" + d2.questionName + "<br>");
+                        for (i = 0; i < d2.values.length; i++) {
+                            kysymykset.push("<input type = " + d2.questionType + " id= " + d2.questionId + " name= " + d2.questionId + " value=" + d2.values[i] + ">" + d2.values[i] + "<br>");
+                        }
+                    }
+                                    
+                    else{
+                    kysymykset.push("<br><br>" + d2.questionName + "<input type=text id="+d2.questionId + " placeholder=vastaus >" + "<br>");
+                    }
+                    
+                    if(lomakekysymys=="kategoria1"){
+                        document.getElementById("lomake1").innerHTML = kysymykset.join("");
+                    }
+                    if(lomakekysymys=="kategoria2"){
+                        document.getElementById("lomake2").innerHTML = kysymykset.join("");
+                    }
+                    if(lomakekysymys=="kategoria3"){
+                        document.getElementById("lomake3").innerHTML = kysymykset.join("");
+                    }
+                    if(lomakekysymys=="kategoria4"){
+                        document.getElementById("lomake4").innerHTML = kysymykset.join("");
+                    }
+                    if(lomakekysymys=="kategoria5"){
+                        document.getElementById("lomake5").innerHTML = kysymykset.join("");
+                    }
+                    
+                    })
             })
-        
-        var kysymys;
-        
-        kysymys1 = lomakekysymys[numero];
-        kysymys2 = lomakekysymys[numero+1];
-        kysymys3 = lomakekysymys[numero+2];
-        kysymys4 = lomakekysymys[numero+3];
-        kysymys5 = lomakekysymys[numero+4];
-        document.getElementById("lomake1").innerHTML = kysymys1 + "<input type=text id="+lomakeid[1]+" >";
-        document.getElementById("lomake2").innerHTML = kysymys2 + "<input type=text id="+lomakeid[2]+" >";
-        document.getElementById("lomake3").innerHTML = kysymys3 + "<input type=text id="+lomakeid[3]+" >";
-        document.getElementById("lomake4").innerHTML = kysymys4 + "<input type=text id="+lomakeid[4]+" >";
-        document.getElementById("lomake5").innerHTML = kysymys5 + "<input type=text id="+lomakeid[5]+" >";
-
     });
 
     //Lomakkeen tietojen lukeminen ja muuttaminen JSON-muotoon
         
     function laheta(){
-            var vastaus;
-            var questionType;
-            
-            for(i=0; i < lomakekysymys.length; i++){
-                
-                questionType = document.getElementById(lomakekysymys[i]).type;
-                vastaus = document.getElementById(lomakekysymys[i]).value;
-                var lahetys = "{ '" + lomakekysymys[i] + "': '" + vastaus + "'}";
-                alert(lahetys);
-            }
-            
-            var myJSON = JSON.stringify(lahetys);
-            
-            $.ajax({
-                url: 'https://technosurvey.herokuapp.com/answers',
-                type: 'POST',
-                dataType: 'json',
-                data: myJSON, 
-                success: function() { alert('POST completed. Data:' + myJSON)}
-            });
-        }
-
+        var vastaus;
+        var questionType;
+        var lahetys = [];
+        
+        lahetys.push("[");
+        
+        for(i=0; i < lomakeid.length; i++){
     
+            vastaus = document.getElementById(lomakeid[i]).value;
+            if(i<(lomakeid.length-1)){
+            
+                lahetys.push("{'answer':" + vastaus + ",'questionId':'" + lomakeid[i] + "'},");
+            }
+
+            else{
+            lahetys.push("{'answer':" + vastaus + ",'questionId':'" + lomakeid[i] + "'}");
+            }
+
+            //lahetys.push("{'questionId':" + lomakeid[i] + ",'answer':'" + vastaus + "'},");
+            //}
+           // else{
+           // lahetys.push("{'questionId':" + lomakeid[i] + ",'answer':'" + vastaus + "'}");
+           // }
+        
+        }  
+        lahetys.push("]");
+       // alert(lahetys.join(""));
+        
+        var myJSON = JSON.stringify(lahetys.join(""));
+            alert(myJSON);
+        $.ajax({
+            url: 'https://technosurvey.herokuapp.com/saveanswers',
+            type: 'POST',
+            dataType: 'json',
+            data: myJSON, 
+            success: function() { alert('POST completed. Data:' + myJSON)}
+        });
+    }
         </script>
    
 </body>
