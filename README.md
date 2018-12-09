@@ -2,6 +2,7 @@
 Haaga-Helia Survey project files
 
 =================================================================
+
 Kyselyn esittely-teksti:
 
 Haaga-Helian oppimispäristöt ja -työvälineet ovat jatkuvassa muutoksessa ja opiskelijoille tarjottavia alustoja on käytössä useita. Tällaisia ovat mm. Peppi - uusi MyNet, Moodle, Office365 palvelut, Asio ja lukkarikone.
