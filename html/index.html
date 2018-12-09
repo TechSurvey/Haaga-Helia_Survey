@@ -13,8 +13,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
         </script>
 
-        <script> //kysymysten vaihto ja piilotus
-
+        <script>
+//----- DIVIEN (KATEGORIOIDEN) VAIHTO JA PIILOTUS -----
+            
                 $(document).ready(function(){
                     
                     $("#seuraava1").click(function(){
@@ -90,7 +91,7 @@
                         });
                     })
             </script>
-    
+<!-- ----- KYSYMYSKATEGORIOIDEN DIVIT ----- -->
         <div class="container">
 
         <header>
@@ -171,7 +172,7 @@
 </div>
     
     <script>
-    
+//----- KYSYMYSTEN HAKU ------
     var numero = 0;
     var lomakeid = []; //tähän kerätään id-tunnukset
     var lomakekysymys= [];
@@ -226,46 +227,78 @@
                     })
             })
     });
-
-    //Lomakkeen tietojen lukeminen ja muuttaminen JSON-muotoon
         
+//----- TIETOJEN LUKU, MUTTAMINEN JSON-MUOTOON -----
+//----- JSON-MUOTOISEN DATAN LÄHETYS ----
     function laheta(){
         var vastaus;
-        var questionType;
         var lahetys = [];
         
         lahetys.push("[");
         
-        for(i=0; i < lomakeid.length; i++){
-    
-            vastaus = document.getElementById(lomakeid[i]).value;
-            if(i<(lomakeid.length-1)){
+        for (i=0; i < lomakeid.length; i++) {
+            tyyppi = document.getElementById(lomakeid[i]).type;
+            var radios = document.getElementsByName(lomakeid[i]);
+            var checkbox = document.getElementsByName(lomakeid[i]);
+
+            if (tyyppi == "text" || tyyppi == "textarea") {
+                vastaus = document.getElementById(lomakeid[i]).value;
+                if(i<(lomakeid.length-1)){
+                        if (vastaus!=""){
+                        lahetys.push("{'answer':'" + vastaus + "','questionId':" + lomakeid[i] + "},");
+                }}
+                else{
+                    if (vastaus!=""){
+                    lahetys.push("{'answer':'" + vastaus + "','questionId':" + lomakeid[i] + "}");
+                }}   
+            }
             
-                lahetys.push("{'answer':" + vastaus + ",'questionId':'" + lomakeid[i] + "'},");
-            }
+             if (tyyppi == "radio") {
+                 for (var x = 0, length = radios.length; x < length; x++) {
+                     if (radios[x].checked) {
+                         vastaus = radios[x].value;
+                        if(i<(lomakeid.length-1)){
+                            lahetys.push("{'answer':'" + vastaus + "','questionId':" + lomakeid[i] + "},");
+                        }
+                        else{
+                            lahetys.push("{'answer':'" + vastaus + "','questionId':" + lomakeid[i] + "}");
+                        }
+                     }
+                 }
+             }
+            
+            if (tyyppi == "checkbox") {
+                for (var x = 0, length = checkbox.length; x < length; x++)
 
-            else{
-            lahetys.push("{'answer':" + vastaus + ",'questionId':'" + lomakeid[i] + "'}");
+                    if (checkbox[x].checked) {
+                        vastaus = checkbox[x].value;
+                        if(i<(lomakeid.length-1)){
+                            lahetys.push("{'answer':'" + vastaus + "','questionId':" + lomakeid[i] + "},");
+                        }
+                        else{
+                            lahetys.push("{'answer':'" + vastaus + "','questionId':" + lomakeid[i] + "}");
+                        }
+                    }
             }
-
-            //lahetys.push("{'questionId':" + lomakeid[i] + ",'answer':'" + vastaus + "'},");
-            //}
-           // else{
-           // lahetys.push("{'questionId':" + lomakeid[i] + ",'answer':'" + vastaus + "'}");
-           // }
-        
-        }  
+           
+           }  
         lahetys.push("]");
-       // alert(lahetys.join(""));
         
-        var myJSON = JSON.stringify(lahetys.join(""));
-            alert(myJSON);
-        $.ajax({
+        var myJSON = lahetys.join([]);
+        //vaihdetaan ' -merkit " -merkkeihin
+        var newJSON = myJSON.replace(/'/g, '"');
+        //jos ,-merkki lopussa >> POISTETAAN
+        newJSON = newJSON.replace(/,]+$/, "]");
+        
+        alert(newJSON);
+        
+       $.ajax({
+            contentType: "application/json; charset=utf-8",
             url: 'https://technosurvey.herokuapp.com/saveanswers',
             type: 'POST',
-            dataType: 'json',
-            data: myJSON, 
-            success: function() { alert('POST completed. Data:' + myJSON)}
+            dataType: 'text', //json
+            data:newJSON, 
+            success: function() { alert('POST completed. Data:' + newJSON)}
         });
     }
         </script>
