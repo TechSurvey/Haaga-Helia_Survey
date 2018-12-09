@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laitekysely</title>
+
+    <link href="../css/style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
+        </script>
+
+        <div class="container">
+        <header>
+            <img src="../kuvat/hh_logo.png" alt="Haaga-Helia logo" width="40%">
+        </header>
+
+        <h1>Laitekysely</h1>
+
+    <form class="registration-form" id="k1">            
+            <label class="col-two-half" style="margin-top:40px">
+                <div>
+                    <p style="font-size:15px">
+                         Haaga-Helian oppimispäristöt ja -työvälineet ovat jatkuvassa muutoksessa ja opiskelijoille tarjottavia alustoja
+                         on käytössä useita. Tällaisia ovat mm. Peppi - uusi MyNet, Moodle, Office365 palvelut, Asio ja lukkarikone. <br><br>
+                         Kyselyn tarkoituksena on kartoittaa opiskelijoiden mielipiteitä eri alustojen käytettävyydestä ja
+                         toiminnallisuuksien tarpeellisuuksista. Kiinnitämme erityisesti huomiota siihen,
+                         millä laitteilla opiskelijat yleisimmin käyttävät oppimisalustoja ja -työväineitä sekä onko alustojen
+                         ja ympäristöjen kehityksessä otettu tarpeeksi huomioon muokkautuvuus eri laitteiden välillä.<br><br>
+                         Kyselyyn vastaaminen vie aikaa vain 3-5 minuuttia, kiitos!
+                    </p>
+                </div>
+            </label>
+            <div class="text-center">
+
+                <input class="seuraava" value="Kyselyyn" onclick="window.location='./index.html'" style="margin-top:20px; text-align: center;" ;="" type="button">
+
+            </div>
+    </form>
+
+</div>
+   
+
+
+</body>
+    
+    
+</html>
