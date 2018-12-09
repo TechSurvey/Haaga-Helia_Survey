@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laitekysely</title>
+
+    <link href="../css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>-->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<!-- ----- ANALYTIIKKA DIVI ----- -->
+    <div class="container" style="min-width: 800px;	margin-left: 20%;">
+        <header>
+            <img src="../kuvat/hh_logo.png" alt="Haaga-Helia logo" width="40%">
+        </header>
+        <br>
+        <p>Kokosimme tälle sivulle mielestämme tärkeimpiä tuloksia kyselyn kannalta. Omat vastauksesi on piilotettu tuloksien joukkoon eikä niitä pysty poimimaan erikseen vastauksista.</p>
+        <br>
+
+                <div id="lomake0"style="float:left; margin-left: 0%;">
+                    <p style="font-weight: 900; color: black; font-family: calibri; font-size: 117%;">Yleinen tyytyväisyysprosentti koulun<br>tarjoamiin ohjelmiin/työvälineisiin:</p>
+                    <br>
+                    <div id="lomake0_0" style="font-size: 900%; font-weight: 900; font-family: serif; color: #21618C;"></div>
+                </div>
+                <div id="lomake1" style="float:right; margin-top: 0%"></div>
+        
+                <div id="lomake2"  style="float:right; margin-top: -3%; margin-left: 40%;"></div>
+                <div id="lomake3" style="margin-top: 38%; margin-left: -10%; max-width: 50%;"></div>
+
+    </div>
+<script>
+    
+          
+        $.getJSON("https://technosurvey.herokuapp.com/answers", function( data ) {
+
+        var items = [];  // alustetaan taulukko nimellä item 
+        var items2 = [];  // alustetaan taulukko nimellä item
+        var items3 = [];  // alustetaan taulukko nimellä item
+        var items4 = [];  // alustetaan taulukko nimellä item
+        var items5 = [];  // alustetaan taulukko nimellä item
+        var count1 = 0;
+        var count2 = 0;
+        var count3 = 0;
+        var count4 = 0;
+        var count5 = 0;
+        var count6 = 0;
+        var count7 = 0;
+        var count = 0;
+        var count_all = 0;
+        
+        var count1_1 = 0;
+        var count1_2 = 0;
+        var count1_3 = 0;
+        var count1_4 = 0;
+        var count1_5 = 0;
+        var count1_6 = 0;
+        var count1_7 = 0;
+         
+        $.each(data, function(key, d){
+            
+            if (d.questionId==57){ //Koetko pystyväsi käyttämään koulun vaatimia ohjelmistoja hyvin laitteesi kautta?
+            
+                items.push([d.answer,d.questionId]);}
+            
+            if (d.questionId==54){ //Mitä laitetta käytät pääasiassa koulutehtävien tekemiseen?
+            
+                items2.push([d.answer,d.questionId]);}
+            
+            if (d.questionId==42){ //Mitä alla olevista koulun työvälineistä tai ohjelmista käytät tai olet käyttänyt?
+                items3.push([d.answer,d.questionId]);
+            }
+            if (d.questionId==61){ //Oletko yleisesti tyytyväinen koulun tarjoamiin ohjelmiin/työvälineisiin?
+                items4.push([d.answer,d.questionId]);
+            }
+            if (d.questionId==71){ //Oletko yleisesti tyytyväinen koulun tarjoamiin ohjelmiin/työvälineisiin?
+                items5.push([d.answer,d.questionId]);
+            }
+            
+            });
+            count1=0;
+            for(var i = 0; i < items.length; ++i){
+                if(items[i] == "Kyllä,57")
+                    count1++;
+                if(items[i] == "En,57")
+                    count2++;
+                if(items[i] == "En&nbsposaa&nbspsanoa,57")
+                    count3++;
+            }
+
+        for(var i = 0; i < items4.length; ++i){
+            if(items4[i] == "Kyllä,61")
+                count++;
+            count_all++;
+        }
+        var tyytyvaisyysprosentti = parseInt(100/count_all*count);
+        document.getElementById("lomake0_0").innerHTML = tyytyvaisyysprosentti + " %";
+            
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+       function drawChart() {    
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Vastaus');
+        data.addColumn('number', 'kpl');
+        data.addRows([
+          ['Kyllä', count1],
+          ['En', count2],
+          ['En osaa sanoa', count3]
+        ]);
+           
+        // Set chart options
+        var options = {'title':'Koetko pystyväsi käyttämään koulun vaatimia ohjelmistoja hyvin laitteesi kautta?',
+                       'width':400,
+                       'height':300,
+                       'backgroundColor': 'transparent',
+                       'pieHole': 0.4,
+                      colors: ['#2E86C1', '#2874A6', '#21618C']};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('lomake1'));
+        chart.draw(data, options);
+           
+// CHART 2: questionId=54 -->
+           
+        for(var i = 0; i < items2.length; ++i){
+            if(items2[i] == "Kannettava&nbsptietokone,54")
+                count1_1++;
+            if(items2[i] == "Kannettava&nbsptietokone&nbspVDI:n&nbspyli,54")
+                count1_2++;
+            if(items2[i] == "Koulun&nbspkone,54")
+                count1_3++;
+            if(items2[i] == "Koulun&nbspkone&nbspVDI:n&nbspyli,54")
+                count1_4++;
+            if(items2[i] == "Pöytäkone,54")
+                count1_5++;
+            if(items2[i] == "Tabletti,54")
+                count1_6++;
+            if(items2[i] == "Puhelin,54")
+                count1_7++;
+        }
+           
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Vastaus');
+        data2.addColumn('number', 'kpl');
+        data2.addRows([
+          ['Koulun kone', count1_3],
+          ['Koulun kone VDI:n yli', count1_4],
+            ['Kannettava tietokone', count1_1],
+          ['Kannettava tietokone VDI:n yli', count1_2],['Pöytäkone', count1_5],
+          ['Tabletti', count1_6],
+          ['Puhelin', count1_7]
+        ]);
+
+        // Set chart options
+        var options2 = {'title':'Mitä laitetta käytät pääasiassa koulutehtävien tekemiseen?',
+                       'width':400,
+                       'height':300,
+                        'backgroundColor': 'transparent',
+                      colors: ['#7FB3D5', '#5499C7', '#2E86C1','#2874A6','#2980B9','#2471A3','#21618C']};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart2 = new google.visualization.PieChart(document.getElementById('lomake3'));
+        chart2.draw(data2, options2);
+         
+//CHART 3: questionId=42 -->
+ /*          
+           count1 = 0;
+           count2 = 0;
+           count3 = 0;
+           count4 = 0;
+           count5 = 0;
+           count6 = 0;
+           count7 = 0;
+           
+        for(var i = 0; i < items3.length; ++i){
+            if(items3[i] == "Office&nbspo365 -&nbspSähköposti,42")
+                count1++;
+            if(items3[i] == "Office&nbspo365 -&nbspOneDrive,42")
+                count2++;
+            if(items3[i] == "Peppi,42")
+                count3++;
+            if(items3[i] == "Asio,42")
+                count4++;
+            if(items3[i] == "Lukkarikone,42")
+                count5++;
+            if(items3[i] == "Skype&nbspfor&nbspBusiness,42")
+                count6++;
+        }
+        alert(count2);
+           
+        var data3 = new google.visualization.DataTable();
+        data3.addColumn('string', 'Vastaus');
+        data3.addColumn('number', 'kpl');
+        data3.addRows([
+          ['Office o365 - Sähköposti', count1],
+          ['Office o365 - OneDrive', count2],
+          ['Peppi', count3],
+          ['Asio', count4],
+          ['Lukkarikone', count5],
+          ['Skype for Business', count6]
+        ]);
+
+        // Set chart options
+        var options3 = {'title':'Mitä alla olevista koulun työvälineistä tai ohjelmista käytät tai olet käyttänyt?',
+                       'width':400,
+                       'height':300,
+                        'backgroundColor': 'transparent',
+                        'pieHole': 0.4,
+                      colors: ['#7FB3D5', '#5499C7', '#2E86C1','#2874A6','#2980B9','#2471A3']};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart3 = new google.visualization.PieChart(document.getElementById('lomake2'));
+        chart3.draw(data3, options3);
+*/
+//CHART 4: questionId = 71
+           
+           count1 = 0;
+           count2 = 0;
+           count3 = 0;
+           count4 = 0;
+           count5 = 0;
+           count6 = 0;
+           count7 = 0;
+           
+        for(var i = 0; i < items5.length; ++i){
+            if(items5[i] == "Office&nbspo365,71")
+                count1++;
+            if(items5[i] == "Moodle,71")
+                count2++;
+            if(items5[i] == "Peppi,71")
+                count3++;
+            if(items5[i] == "VDI,71")
+                count4++;
+            if(items5[i] == "Asio,71")
+                count5++;
+            if(items5[i] == "Lukkarikone,71")
+                count6++;
+            if(items5[i] == "Vanha&ampnbspMyNet,71")
+                count7++;
+            if(items5[i] == "Skype&nbspfor&nbspBusiness,71")
+                count1_1++;
+            if(items5[i] == "Jokin&nbspmuu,71")
+                count1_2++;
+        }
+           
+        var data4 = new google.visualization.DataTable();
+        data4.addColumn('string', 'Vastaus');
+        data4.addColumn('number', 'kpl');
+        data4.addRows([
+          ['Office o365', count1],
+          ['Moodle', count2],
+          ['Peppi', count3],
+          ['VDI', count4],
+          ['Asio', count5],
+          ['Lukkarikone', count6],
+          ['Vanha Mynet', count7],
+          ['Skype for Business', count1_1],
+          ['Jokin muu', count1_2]
+        ]);
+
+        // Set chart options
+        var options4 = {'title':'Mitä ohjelmaa tai työvälinettä ongelmat yleensä koskevat?',
+                       'width':400,
+                       'height':300,
+                        'backgroundColor': 'transparent',
+                        'pieHole': 0.4,
+                      colors: ['#7FB3D5', '#5499C7', '#2E86C1','#2874A6','#2980B9','#2471A3']};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart4 = new google.visualization.PieChart(document.getElementById('lomake2'));
+        chart4.draw(data4, options4);
+           
+      }
+        
+        })
+
+    
+</script>
+
+</body>
+    
+    
+</html>
