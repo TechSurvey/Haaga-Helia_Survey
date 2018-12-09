@@ -1,1 +1,10 @@
-[{"answer":"Kannettava&nbsptietokone&nbspVDI:n&nbspyli","questionId":54},{"answer":"Koulun&nbspkone&nbspVDI:n&nbspyli","questionId":54},{"answer":"Puhelin","questionId":54},{"answer":"En","questionId":57},{"answer":"Linux","questionId":55},{"answer":"IOS","questionId":55},{"answer":"Android","questionId":55},{"answer":"En&nbsposaa&nbspsanoa","questionId":61},{"answer":"Office&nbspo365 -&nbspOneDrive","questionId":42},{"answer":"Asio","questionId":42},{"answer":"Skype&nbspfor&nbspBusiness","questionId":42},{"answer":"Mozilla&nbspFirefox","questionId":56},{"answer":"Safari","questionId":56},{"answer":"Internet&nbspExplorer","questionId":56},{"answer":"Peppi","questionId":71},{"answer":"VDI","questionId":71},{"answer":"Lukkarikone","questionId":71},{"answer":"Puro","questionId":63},{"answer":"En&nbsposaa&nbspsanoa","questionId":70},{"answer":"Kyllä","questionId":62},{"answer":"Kyllä","questionId":65},{"answer":"En","questionId":64},{"answer":"VDI","questionId":66},{"answer":"Asemointi","questionId":68}]
+[{"answer":"Kannettava&nbsptietokone&nbspVDI:n&nbspyli","questionId":54},
+{"answer":"Koulun&nbspkone&nbspVDI:n&nbspyli","questionId":54},{"answer":"Puhelin","questionId":54},
+{"answer":"En","questionId":57},{"answer":"Linux","questionId":55},{"answer":"IOS","questionId":55},
+{"answer":"Android","questionId":55},{"answer":"En&nbsposaa&nbspsanoa","questionId":61},
+{"answer":"Office&nbspo365 -&nbspOneDrive","questionId":42},{"answer":"Asio","questionId":42},
+{"answer":"Skype&nbspfor&nbspBusiness","questionId":42},{"answer":"Mozilla&nbspFirefox","questionId":56},
+{"answer":"Safari","questionId":56},{"answer":"Internet&nbspExplorer","questionId":56},{"answer":"Peppi","questionId":71},
+{"answer":"VDI","questionId":71},{"answer":"Lukkarikone","questionId":71},{"answer":"Puro","questionId":63},
+{"answer":"En&nbsposaa&nbspsanoa","questionId":70},{"answer":"Kyllä","questionId":62},{"answer":"Kyllä","questionId":65},
+{"answer":"En","questionId":64},{"answer":"VDI","questionId":66},{"answer":"Asemointi","questionId":68}]
