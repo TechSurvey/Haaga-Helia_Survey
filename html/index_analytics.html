@@ -39,7 +39,9 @@
     
           
         $.getJSON("https://technosurvey.herokuapp.com/answers", function( data ) {
-
+            
+//EI tarpeellista olla näin monta, ajan takia en kerennyt hienosäätämään/siistimään
+            
         var items = [];  // alustetaan taulukko nimellä item 
         var items2 = [];  // alustetaan taulukko nimellä item
         var items3 = [];  // alustetaan taulukko nimellä item
@@ -168,7 +170,8 @@
         // Instantiate and draw our chart, passing in some options.
         var chart2 = new google.visualization.PieChart(document.getElementById('lomake3'));
         chart2.draw(data2, options2);
-         
+
+// YLIMÄÄRÄINEN CHART, ei sopinut malliin yhtä hyvin, korvattiin mutta koodi jätettiin mahdollisten kehitysten toivossa
 //CHART 3: questionId=42 -->
  /*          
            count1 = 0;
