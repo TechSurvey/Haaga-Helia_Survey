@@ -8,11 +8,11 @@ Haaga-Helia Survey project files
 <h2>TYYTYVÄISYYSKYSELY KOULUN TARJOAMISTA OHJELMISTA JA TYÖVÄLINEISTÄ</h2>
 
 <p>
-Haaga-Helian oppimispäristöt ja -työvälineet ovat jatkuvassa muutoksessa ja opiskelijoille tarjottavia alustoja on käytössä useita. Tällaisia ovat mm. Peppi - uusi MyNet, Moodle, Office365 palvelut, Asio ja lukkarikone.
+"Haaga-Helian oppimispäristöt ja -työvälineet ovat jatkuvassa muutoksessa ja opiskelijoille tarjottavia alustoja on käytössä useita. Tällaisia ovat mm. Peppi - uusi MyNet, Moodle, Office365 palvelut, Asio ja lukkarikone.
 
 Kyselyn tarkoituksena on kartoittaa opiskelijoiden mielipiteitä eri alustojen käytettävyydestä ja toiminnallisuuksien tarpeellisuuksista. Kiinnitämme erityisesti huomiota siihen, millä laitteilla opiskelijat yleisimmin käyttävät oppimisalustoja ja -työväineitä sekä onko alustojen ja ympäristöjen kehityksessä otettu tarpeeksi huomioon muokkautuvuus eri laitteiden välillä.
 
-Kyselyyn vastaaminen vie aikaa vain 3-5 minuuttia, kiitos!
+Kyselyyn vastaaminen vie aikaa vain 3-5 minuuttia, kiitos!"
 </p>
 
 <h3>Tavoitteena sprinttien aikana:</h3>
